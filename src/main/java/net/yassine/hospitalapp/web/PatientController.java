@@ -1,9 +1,9 @@
-package net.yassine.unsecuredhospitalappyoussfi.web;
+package net.yassine.hospitalapp.web;
 
 import jakarta.validation.Valid;
 
-import net.yassine.unsecuredhospitalappyoussfi.entities.Patient;
-import net.yassine.unsecuredhospitalappyoussfi.repository.PatientRepository;
+import net.yassine.hospitalapp.entities.Patient;
+import net.yassine.hospitalapp.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

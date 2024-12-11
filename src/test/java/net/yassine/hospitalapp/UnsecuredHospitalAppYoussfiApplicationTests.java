@@ -1,4 +1,4 @@
-package net.yassine.unsecuredhospitalappyoussfi;
+package net.yassine.hospitalapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,8 +1,8 @@
-package net.yassine.unsecuredhospitalappyoussfi;
+package net.yassine.hospitalapp;
 
 
-import net.yassine.unsecuredhospitalappyoussfi.entities.Patient;
-import net.yassine.unsecuredhospitalappyoussfi.repository.PatientRepository;
+import net.yassine.hospitalapp.entities.Patient;
+import net.yassine.hospitalapp.repository.PatientRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,10 +13,10 @@ import java.util.List;
 
 
 @SpringBootApplication
-public class UnsecuredHospitalAppYoussfiApplication {
+public class UnsecuredHospitalAppSpringBoot {
 
     public static void main(String[] args) {
-        SpringApplication.run(UnsecuredHospitalAppYoussfiApplication.class, args);
+        SpringApplication.run(UnsecuredHospitalAppSpringBoot.class, args);
     }
 
     @Bean

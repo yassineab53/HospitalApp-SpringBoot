@@ -1,7 +1,7 @@
-package net.yassine.unsecuredhospitalappyoussfi.repository;
+package net.yassine.hospitalapp.repository;
 
 
-import net.yassine.unsecuredhospitalappyoussfi.entities.Patient;
+import net.yassine.hospitalapp.entities.Patient;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
