@@ -2,6 +2,7 @@ package net.yassine.hospitalapp.entities;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 
 import java.util.Date;
 
@@ -81,6 +82,6 @@ public class Patient {
         return score;
     }
 
-    //@Min(10)
+    @Min(10)
     private int score;
 }
