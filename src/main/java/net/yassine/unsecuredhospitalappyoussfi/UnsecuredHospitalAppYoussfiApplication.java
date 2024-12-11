@@ -31,11 +31,20 @@ public class UnsecuredHospitalAppYoussfiApplication {
                     .malade(false)
                     .score(50)
                     .build();*/
-            Patient p1 = new Patient(null,"Hajar", new Date(), false, 50);
+            Patient p1 = new Patient(null,"Hajar", new Date(), true, 50);
+            Patient p2 = new Patient(null,"Achraf", new Date(), false, 40);
+            Patient p3 = new Patient(null,"Aya", new Date(), true, 20);
+            Patient p4 = new Patient(null,"Salma", new Date(), false, 30);
+            Patient p5 = new Patient(null,"Ahmed", new Date(), false, 60);
+
 
 
 
             patientRepository.save(p1);
+            patientRepository.save(p2);
+            patientRepository.save(p3);
+            patientRepository.save(p4);
+            patientRepository.save(p5);
 
             List<Patient> patients = patientRepository.findAll();
             patients.forEach(p->{
