@@ -125,15 +125,11 @@ Default credentials:
 
 - **Security**: Add Spring Security to secure endpoints and sensitive data.
 - **Advanced Features**: Implement role-based access control (e.g., admin vs user functionality).
-- **Database Integration**: Replace H2 with a production-ready database like MySQL or PostgreSQL.
+- **Database Integration**: Replace H2 with a production-ready database like MySQL.
 - **Testing**: Add unit and integration tests using JUnit and Mockito.
 
 ---
 
 ## Author
-**Yassine** - A passionate Java Developer with expertise in building web applications using Spring Boot.
-
----
-
-## License
-This project is licensed under the MIT License.
+**Abbou Yassine** : yassine.abbou.23@ump.ac.ma
+--
