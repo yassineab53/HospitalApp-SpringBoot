@@ -100,7 +100,8 @@ Ensure you have the following installed:
 
 
 ## Database Configuration
-The application uses an H2 in-memory database. The configuration can be found in the `application.properties` file:
+The configuration can be found in the `application.properties` file.<br>
+For H2 memory database : 
 
 ```properties
 spring.datasource.url=jdbc:h2:mem:testdb
@@ -109,15 +110,22 @@ spring.datasource.username=sa
 spring.datasource.password=
 spring.h2.console.enabled=true
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-```
 
-Access the H2 database console at:
 ```
-http://localhost:8085/h2-console
+For MySQL database :
+```properties
+server.port=8085
+
+spring.datasource.url=jdbc:mysql://localhost:3306/hospital-db?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=root
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+spring.mvc.format.date=yyyy-MM-dd
+spring.thymeleaf.cache=false
+spring.jpa.show-sql=true
+
 ```
-Default credentials:
-- **Username**: `sa`
-- **Password**: (leave blank)
 
 ---
 
