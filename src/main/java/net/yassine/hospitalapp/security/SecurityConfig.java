@@ -21,9 +21,13 @@ public class SecurityConfig {
                 User.withUsername("admin").password("1234").roles("USER", "ADMIN").build()
         );
     }*/
+    // ou est ce que Spring Security va chercher les utilisateurs ? il existe plusieurs strategies (InMemoryAuthentication, JDBC authentication...UserDetailsService)
+    //InMemoryAuthentication : ça veut dire que je vais preciser en memoire les utilisateurs qui ont le droit d'acceder à l'application
     @Bean
     public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
         return new InMemoryUserDetailsManager(
+                //quand vous preciser un password il faut utiliser un password encoder
+                //les password doivent tjrs etre haches
                 User.withUsername("user").password("password").roles("USER").build(),
                 User.withUsername("user2").password("1234").roles("USER").build(),
                 User.withUsername("admin").password("1234").roles("USER", "ADMIN").build()
