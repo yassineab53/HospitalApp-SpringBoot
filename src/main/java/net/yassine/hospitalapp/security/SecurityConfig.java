@@ -13,22 +13,21 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    //@Autowired
+    @Autowired
     //La dépendance passwordEncoder devient une variable finale, ce qui garantit qu'elle est initialisée une seule fois (lors de la construction de l'objet) et ne peut pas être modifiée par la suite.
-    private final PasswordEncoder passwordEncoder;
+    private  PasswordEncoder passwordEncoder;
     /*Injection par constructeur :
 
     Lorsque Spring instancie la classe SecurityConfig, il détecte qu'un bean de type PasswordEncoder est nécessaire (via le constructeur).
     Si un bean de type PasswordEncoder est défini dans le contexte d'application, Spring l'injecte automatiquement dans le constructeur.*/
 
-    public SecurityConfig(PasswordEncoder passwordEncoder) {
-        this.passwordEncoder = passwordEncoder;
-    }
+
 
     //creer les utilisateurs qui ont le droit d'acceder à l'application
     // ou est ce que Spring Security va chercher les utilisateurs ? il existe plusieurs strategies (InMemoryAuthentication, JDBC authentication...UserDetailsService)
     //InMemoryAuthentication : ça veut dire que je vais preciser en memoire les utilisateurs qui ont le droit d'acceder à l'application
     @Bean
+    //L'annotation @Bean est utilisée en Spring Framework pour indiquer qu'une méthode retourne un objet (ou "bean") qui doit être enregistré dans le contexte de l'application Spring (Spring Application Context). Cela permet à Spring de gérer cet objet comme un composant réutilisable qui peut être injecté dans d'autres parties de l'application.
     public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
         return new InMemoryUserDetailsManager(
                 //quand vous preciser un password il faut utiliser un password encoder
