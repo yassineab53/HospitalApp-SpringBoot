@@ -31,6 +31,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
+                        <!--//logout : ça veut dire fermer la session cote serveur et au meme temps il y a le cookie qui va etre supprime cote browser-->
                         <!--<li><a class="dropdown-item" th:href="@{/logout}">Logout</a></li>-->
                         <form method="post" th:action="@{/logout}">
                             <button class="dropdown-item" type="submit">Logout</button>
