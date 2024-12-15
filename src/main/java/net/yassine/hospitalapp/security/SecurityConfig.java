@@ -12,6 +12,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
+        //httpSecurity.formLogin();
         // dire à Spring Security je voudrais que toutes les requetes necessitent une authentification
         httpSecurity.authorizeRequests().anyRequest().authenticated();
         return httpSecurity.build();
