@@ -31,8 +31,11 @@ public class SecurityConfig {
                 //Spring Security il utilise par defaut un password encoder
                 // {noop} : no password encoder : pour stocker le password sans le hache automatiquement par speing security
                 User.withUsername("user").password("{noop}password").roles("USER").build(),
-                User.withUsername("user2").password("1234").roles("USER").build(),
-                User.withUsername("admin").password("1234").roles("USER", "ADMIN").build()
+                User.withUsername("user2").password("{noop}1234").roles("USER").build(),
+                User.withUsername("admin").password("{noop}1234").roles("USER", "ADMIN").build()
+                // qu'on vous travailler avec Spring Security vous aurez besoin d'utiliser un password encoder
+                // alors comment utiliser le password encoder
+                // on va creer un bean par exemple au nv de l'application
         );
     }
     @Bean
