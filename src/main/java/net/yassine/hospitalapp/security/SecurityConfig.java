@@ -54,6 +54,7 @@ public class SecurityConfig {
         httpSecurity.authorizeRequests().requestMatchers("/admin/**").hasRole("ADMIN");
         // dire à Spring Security je voudrais que toutes les requetes necessitent une authentification
         httpSecurity.authorizeRequests().anyRequest().authenticated();
+        httpSecurity.exceptionHandling().accessDeniedPage("/accessDenied");
         return httpSecurity.build();
     }
 }
