@@ -17,6 +17,7 @@ public class Patient {
     private String nom;
     //@Temporal(TemporalType.DATE)
     private Date dateNaissance;
+    private boolean malade;
 
     public Patient(Long id, String nom, Date dateNaissance, boolean malade, int score) {
         this.nom = nom;
@@ -26,7 +27,7 @@ public class Patient {
         this.score = score;
     }
 
-    private boolean malade;
+
 
     public Patient() {
     }
