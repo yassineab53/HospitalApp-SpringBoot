@@ -28,7 +28,9 @@ public class SecurityConfig {
         return new InMemoryUserDetailsManager(
                 //quand vous preciser un password il faut utiliser un password encoder
                 //les password doivent tjrs etre haches
-                User.withUsername("user").password("password").roles("USER").build(),
+                //Spring Security il utilise par defaut un password encoder
+                // {noop} : no password encoder : pour stocker le password sans le hache automatiquement par speing security
+                User.withUsername("user").password("{noop}password").roles("USER").build(),
                 User.withUsername("user2").password("1234").roles("USER").build(),
                 User.withUsername("admin").password("1234").roles("USER", "ADMIN").build()
         );
