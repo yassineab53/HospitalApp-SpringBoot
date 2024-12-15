@@ -50,9 +50,8 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.formLogin();
-        //
-        httpSecurity.authorizeHttpRequests().requestMatchers("/user/**").hasRole("USER");
-        httpSecurity.authorizeHttpRequests().requestMatchers("/admin/**").hasRole("ADMIN");
+        httpSecurity.authorizeRequests().requestMatchers("/user/**").hasRole("USER");
+        httpSecurity.authorizeRequests().requestMatchers("/admin/**").hasRole("ADMIN");
         // dire à Spring Security je voudrais que toutes les requetes necessitent une authentification
         httpSecurity.authorizeRequests().anyRequest().authenticated();
         return httpSecurity.build();
