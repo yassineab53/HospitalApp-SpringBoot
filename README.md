@@ -1,7 +1,7 @@
-# Unsecured Hospital Management Application
+# Hospital Management Application
 
 ## Overview
-The **Unsecured Hospital Management Application** is a basic Java Spring Boot web application designed to manage patients' information. It allows users to:
+The **Hospital Management Application** is a basic Java Spring Boot web application designed to manage patients' information. It allows users to:
 - List patients with pagination.
 - Search patients by name.
 - Add, edit, and delete patient records.
@@ -10,7 +10,7 @@ The application is developed using the following technologies:
 
 - **Backend**: Spring Boot, JPA (Hibernate), Java 17
 - **Frontend**: Thymeleaf, Bootstrap
-- **Database**: H2 (in-memory database)
+- **Database**: MySQL
 - **Build Tool**: Maven
 
 ---

@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Min;
 
 import java.util.Date;
 
+//The @Entity annotation indicates that a Java class is marked as a Java Persistence API (JPA) entity
 @Entity
 /*@Getter
 @Setter

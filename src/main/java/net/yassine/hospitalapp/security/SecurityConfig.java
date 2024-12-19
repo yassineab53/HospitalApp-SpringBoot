@@ -9,19 +9,16 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+//@Configuration : indiquer à Spring que c une classe de configuration
+//@Configuration annotation indicates that the class has @Bean definition methods
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+    /*
     @Autowired
-    //La dépendance passwordEncoder devient une variable finale, ce qui garantit qu'elle est initialisée une seule fois (lors de la construction de l'objet) et ne peut pas être modifiée par la suite.
-    private  PasswordEncoder passwordEncoder;
-    /*Injection par constructeur :
-
-    Lorsque Spring instancie la classe SecurityConfig, il détecte qu'un bean de type PasswordEncoder est nécessaire (via le constructeur).
-    Si un bean de type PasswordEncoder est défini dans le contexte d'application, Spring l'injecte automatiquement dans le constructeur.*/
-
-
+    private  PasswordEncoder passwordEncoder;  */
 
     //creer les utilisateurs qui ont le droit d'acceder à l'application
     // ou est ce que Spring Security va chercher les utilisateurs ? il existe plusieurs strategies (InMemoryAuthentication, JDBC authentication...UserDetailsService)
@@ -31,32 +28,38 @@ public class SecurityConfig {
     public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
         return new InMemoryUserDetailsManager(
                 //quand vous preciser un password il faut utiliser un password encoder
-                //les password doivent tjrs etre haches
+                //les password doivent tjrs etre hachés
                 //Spring Security il utilise par defaut un password encoder
-                // {noop} : no password encoder : pour stocker le password sans le hache automatiquement par speing security
+                // {noop} : no password encoder : pour stocker le password sans le haché automatiquement par Spring Security
 
 
-                //User.withUsername("user").password("{noop}password").roles("USER").build(),
-                User.withUsername("user").password(passwordEncoder.encode("1234")).roles("USER").build(),
+                User.withUsername("user").password("{noop}1234").roles("USER").build(),
+                //User.withUsername("user1").password(passwordEncoder.encode("1234")).roles("USER").build(),
                 //User.withUsername("user2").password("{noop}1234").roles("USER").build(),
-                User.withUsername("user2").password(passwordEncoder.encode("1234")).roles("USER").build(),
-                //User.withUsername("admin").password("{noop}1234").roles("USER", "ADMIN").build()
-                User.withUsername("admin").password(passwordEncoder.encode("1234")).roles("USER", "ADMIN").build()
+                //User.withUsername("user2").password(passwordEncoder.encode("1234")).roles("USER").build(),
+                User.withUsername("admin").password("{noop}1234").roles("USER", "ADMIN").build()
+                //User.withUsername("admin").password(passwordEncoder.encode("admin")).roles("USER", "ADMIN").build()
                 // qu'on vous travailler avec Spring Security vous aurez besoin d'utiliser un password encoder
                 // alors comment utiliser le password encoder
                 // on va creer un bean par exemple au nv de l'application
         );
     }
+
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         //httpSecurity.formLogin();
+
         //personnaliser login page :
+        //httpSecurity.formLogin().permitAll();
         httpSecurity.formLogin().loginPage("/login").permitAll();
         httpSecurity.authorizeRequests().requestMatchers("/user/**").hasRole("USER");
         httpSecurity.authorizeRequests().requestMatchers("/admin/**").hasRole("ADMIN");
+
+
         // dire à Spring Security je voudrais que toutes les requetes necessitent une authentification
         httpSecurity.authorizeRequests().anyRequest().authenticated();
-        httpSecurity.exceptionHandling().accessDeniedPage("/accessDenied");
+        //httpSecurity.exceptionHandling().accessDeniedPage("/accessDenied");
         return httpSecurity.build();
     }
 }
+
