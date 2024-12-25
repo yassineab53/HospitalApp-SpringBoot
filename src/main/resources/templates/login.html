@@ -23,7 +23,7 @@
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #fff;
             text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
         }
@@ -32,8 +32,8 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 12px;
-            padding: 30px 25px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            padding: 40px 30px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             width: 100%;
             max-width: 400px;
         }
@@ -44,7 +44,7 @@
 
         label {
             display: block;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: bold;
             margin-bottom: 8px;
             color: #ddd;
@@ -72,7 +72,7 @@
         button {
             width: 100%;
             padding: 12px 15px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             border: none;
             border-radius: 8px;
             background: #4b6cb7;
@@ -104,6 +104,27 @@
 
         .form-footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Small screens (responsive) */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            form {
+                padding: 25px 20px;
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>

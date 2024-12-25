@@ -48,7 +48,7 @@ public class UnsecuredHospitalAppSpringBoot {
 
 
 
-            patientRepository.save(p1);
+            /*patientRepository.save(p1);
             patientRepository.save(p2);
             patientRepository.save(p3);
             patientRepository.save(p4);
@@ -56,7 +56,7 @@ public class UnsecuredHospitalAppSpringBoot {
             patientRepository.save(p6);
             patientRepository.save(p7);
             patientRepository.save(p8);
-            patientRepository.save(p9);
+            patientRepository.save(p9);*/
 
 
             List<Patient> patients = patientRepository.findAll();
