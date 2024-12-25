@@ -102,14 +102,21 @@ Ensure you have the following installed:
 ---
 
 ## Screenshots
+### 1. Login page
 
-### 1. List of Patients
+![Login Page](./screenshots/login.png)
 
-![List of Patients](./screenshots/list-patients.png)
+### 2. List of Patients
 
-### 2. Add a Patient
+![List of Patients](./screenshots/patients1.png)
 
-![Add Patient](./screenshots/add-patient.png)
+### 3. Add a Patient
+
+![Add Patient](./screenshots/addPatient.png)
+
+### 4. Edit Patient
+
+![Add Patient](./screenshots/editPatient.png)
 
 
 
@@ -145,9 +152,9 @@ spring.jpa.show-sql=true
 
 ## Future Improvements
 
-- **Security**: Add Spring Security to secure endpoints and sensitive data.
-- **Advanced Features**: Implement role-based access control (e.g., admin vs user functionality).
-- **Database Integration**: Replace H2 with a production-ready database like MySQL.
+- **Security**: Add Spring Security to secure endpoints and sensitive data : done
+- **Advanced Features**: Implement role-based access control (e.g., admin vs user functionality) : done
+- **Database Integration**: Replace H2 with a production-ready database like MySQL : done
 - **Testing**: Add unit and integration tests using JUnit and Mockito.
 
 ---
