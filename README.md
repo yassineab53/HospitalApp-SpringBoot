@@ -54,20 +54,26 @@ The application is developed using the following technologies:
 │   │   ├── java
 │   │   │   └── net.yassine.hospitalapp
 │   │   │       ├── entities
-│   │   │       │   └── Patient.java
+│   │   │       │   └── Patient.java            # Represents the Patient entity
 │   │   │       ├── repository
-│   │   │       │   └── PatientRepository.java
+│   │   │       │   └── PatientRepository.java   # Repository interface for database operations
 │   │   │       ├── web
-│   │   │       │   └── PatientController.java
-│   │   │       └── UnsecuredHospitalAppSpringBoot.java
+│   │   │       │   ├── PatientController.java   # Handles HTTP requests for patient-related operations
+│   │   │       │   └── LoginController.java     # New controller for handling login requests
+│   │   │       ├── security
+│   │   │       │   └── SecurityConfig.java      # Security configuration class
+│   │   │       └── UnsecuredHospitalAppSpringBoot.java  # Main Spring Boot application entry point
 │   │   └── resources
 │   │       ├── templates
-│   │       │   ├── patients.html
-│   │       │   ├── formPatient.html
-│   │       │   ├── editPatient.html
-│   │       └── application.properties
-├── pom.xml
-└── README.md
+│   │       │   ├── patients.html               # View for displaying the list of patients
+│   │       │   ├── formPatient.html            # Form for adding a new patient
+│   │       │   ├── editPatient.html           # Form for editing existing patient data
+│   │       │   └── login.html                 # Login page template
+│   │       └── application.properties         # Spring Boot application configuration
+├── pom.xml                                      # Maven build configuration
+└── README.md                                    # Project documentation and instructions
+                                   
+
 ```
 
 ---
