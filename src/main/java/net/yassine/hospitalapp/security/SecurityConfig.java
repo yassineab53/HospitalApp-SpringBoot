@@ -16,9 +16,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    /*
+
     @Autowired
-    private  PasswordEncoder passwordEncoder;  */
+    private  PasswordEncoder passwordEncoder;
 
     //creer les utilisateurs qui ont le droit d'acceder à l'application
     // ou est ce que Spring Security va chercher les utilisateurs ? il existe plusieurs strategies (InMemoryAuthentication, JDBC authentication...UserDetailsService)
@@ -33,8 +33,8 @@ public class SecurityConfig {
                 // {noop} : no password encoder : pour stocker le password sans le haché automatiquement par Spring Security
 
 
-                User.withUsername("user").password("{noop}1234").roles("USER").build(),
-                //User.withUsername("user1").password(passwordEncoder.encode("1234")).roles("USER").build(),
+                //User.withUsername("user").password("{noop}1234").roles("USER").build(),
+                User.withUsername("user1").password(passwordEncoder.encode("1234")).roles("USER").build(),
                 //User.withUsername("user2").password("{noop}1234").roles("USER").build(),
                 //User.withUsername("user2").password(passwordEncoder.encode("1234")).roles("USER").build(),
                 User.withUsername("admin").password("{noop}1234").roles("USER", "ADMIN").build()
