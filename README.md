@@ -54,24 +54,24 @@ The application is developed using the following technologies:
 │   │   ├── java
 │   │   │   └── net.yassine.hospitalapp
 │   │   │       ├── entities
-│   │   │       │   └── Patient.java            # Represents the Patient entity
+│   │   │       │   └── Patient.java           
 │   │   │       ├── repository
 │   │   │       │   └── PatientRepository.java   # Repository interface for database operations
 │   │   │       ├── web
-│   │   │       │   ├── PatientController.java   # Handles HTTP requests for patient-related operations
-│   │   │       │   └── LoginController.java     # New controller for handling login requests
+│   │   │       │   ├── PatientController.java  
+│   │   │       │   └── LoginController.java    
 │   │   │       ├── security
-│   │   │       │   └── SecurityConfig.java      # Security configuration class
-│   │   │       └── UnsecuredHospitalAppSpringBoot.java  # Main Spring Boot application entry point
+│   │   │       │   └── SecurityConfig.java      
+│   │   │       └── UnsecuredHospitalAppSpringBoot.java  
 │   │   └── resources
 │   │       ├── templates
-│   │       │   ├── patients.html               # View for displaying the list of patients
-│   │       │   ├── formPatient.html            # Form for adding a new patient
-│   │       │   ├── editPatient.html           # Form for editing existing patient data
-│   │       │   └── login.html                 # Login page template
-│   │       └── application.properties         # Spring Boot application configuration
-├── pom.xml                                      # Maven build configuration
-└── README.md                                    # Project documentation and instructions
+│   │       │   ├── patients.html               
+│   │       │   ├── formPatient.html            
+│   │       │   ├── editPatient.html          
+│   │       │   └── login.html                
+│   │       └── application.properties         
+├── pom.xml                                     
+└── README.md                                    
                                    
 
 ```
