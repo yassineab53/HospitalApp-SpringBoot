@@ -66,11 +66,9 @@ public class UnsecuredHospitalAppSpringBoot {
         };
     }
 
-
     @Bean
     PasswordEncoder passwordEncoder() {
         // parmis les password encoder qui ont utiliser on a BCryptPasswordEncoder : algorithme tres puissant qui permet de faire le hachage des mot de passes
         return new BCryptPasswordEncoder();
     }
-
 }

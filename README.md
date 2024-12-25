@@ -27,10 +27,24 @@ The application is developed using the following technologies:
     - Search patients by keyword.
     - Navigate through patient records using pagination.
 
-3. **Real-Time View Updates**
+3. **Security (Authentication & Authorization)**
+    - Secured login functionality using Spring Security. 
+    - Role-based access control:
+       - Admin: Full access to all CRUD operations. 
+       - User: Read-only access to patient information.
+
+4. **Real-Time View Updates**
     - Automatically updates the table when new records are added or deleted.
 
 ---
+
+## Technologies Used
+  - **Backend:** Spring Boot, Spring Security, JPA (Hibernate), Java 17
+  - **Frontend:** Thymeleaf, Bootstrap, CSS
+  - **Database:** MySQL
+  - **Build Tool:** Maven
+
+
 
 ## Project Structure
 
